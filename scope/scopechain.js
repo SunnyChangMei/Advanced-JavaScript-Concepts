@@ -11,7 +11,7 @@ function sayMyName() {
   }
 }
 
-sayMyName()()() //! need to add three ()()() call each function. else it just return the function name with out any output.
+sayMyName()()() //! need to add three ()()() to call each function. else it just return the function name without output.
 
 function findName() {
   var b = 'b';
