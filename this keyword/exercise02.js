@@ -29,7 +29,7 @@ const obj = {
 const obj = {
   name: 'Billy',
   sing: function () {
-    var here = this; //! declared here
+    var here = this; //! declared here for REFERENCE
     console.log('a', here); //! change this to here
     var anotherFunc = function () {
       console.log('b', here); //! change this to here
@@ -37,5 +37,20 @@ const obj = {
     anotherFunc(); //! invoked here
   }
 };
+//a {name: "Billy", sing: ƒ}
+//b {name: "Billy", sing: ƒ}
+
+//! Solution 3 use method bind(this)
+const obj = {
+  name: 'Billy',
+  sing: function () {
+    console.log('a', this);
+    var anotherFunc = function () {
+      console.log('b', this);
+    };
+    return anotherFunc.bind(this); //! invoked with bind()
+  }
+};
+obj.sing()() //! invoked method bind(this) inside sing()
 //a {name: "Billy", sing: ƒ}
 //b {name: "Billy", sing: ƒ}
