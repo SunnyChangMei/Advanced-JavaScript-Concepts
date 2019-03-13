@@ -1,5 +1,5 @@
 //! ES6 Class => extends => super
-
+//! use instanceof to check prototype chain
 class Character {
   constructor(name, weapon) {
     this.name = name;
@@ -47,3 +47,17 @@ console.log(shrek);
 //Ogre { name: 'Shrek', weapon: 'club', color: 'green' }
 console.log(shrek.makeFort());
 //strongest fort in the world made
+//! we should use instanceof to check
+console.log(shrek instanceof Ogre);
+//true
+console.log(shrek instanceof Character);
+//true
+console.log(fiona instanceof Elf);
+//true
+console.log(fiona instanceof Character);
+//true
+
+console.log(Ogre.isPrototypeOf(shrek));
+//! false
+console.log(Ogre.prototype.isPrototypeOf(shrek));
+//! true
