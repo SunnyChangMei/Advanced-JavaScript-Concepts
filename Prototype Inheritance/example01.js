@@ -39,12 +39,15 @@ console.log(dragon.isPrototypeOf(lizard));
 console.log(lizard.isPrototypeOf(dragon));
 //? false
 
-for (let prop in lizard) {
+lizard.antherFunc();//will get type error, its not a function
+//! undefined
+
+for (const prop in lizard) {
   console.log(prop);
   //list all properties name, fight, fire, sing because lizard inherit from dragon
 }
 
-for (let prop in lizard) {
+for (const prop in lizard) {
   if (lizard.hasOwnProperty(prop)) {
     console.log(prop);
     //? It only return name and fight of its own property
