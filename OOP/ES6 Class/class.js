@@ -38,3 +38,17 @@ console.log(sam.name);
 console.log(sam.attack());
 //Sam, attack with Long-Bow
 
+const fiona = new Elf('Fiona', 'Ninja Stars');
+console.log(fiona.__proto__);
+//Elf {}
+
+//! use spread operator
+
+const ogre = {...fiona}; //clone
+console.log(ogre.__proto__);
+//{} just empty object. ogre no longer has the Elf class as base Class
+console.log(fiona === ogre);
+//! return false => because they are referencing the same place in memory. ogre lost the link chain
+//? solution => use extends and super
+console.log(ogre);
+//{ name: 'Fiona', weapon: 'Ninja Stars' }
